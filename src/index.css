@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@font-face {
+  font-family: 'millik';
+  src: url('/fonts/millik.woff') format('woff'); 
+  font-weight: normal; 
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Moderat-Bold';
+  src: url('/fonts/Moderat-Bold.woff') format('woff'); 
+  font-weight: normal; 
+  font-style: normal;
+}
+
+
+
+
+
+@layer components{
+  .justifyCenterSpaceBetween{
+    @apply flex items-center justify-between;
+  }
+  .primaryButtonColor{
+    @apply text-fadedGrey font-medium md:font-normal   bg-textBlue rounded-lg;
+  }
+  .secondaryButtonColor{
+    @apply bg-fadedGrey font-medium   md:font-normal text-textBlue rounded-lg;
+  }
+}
+.cls-1{fill:#2a3362;}
+.cls-2{fill:#009a46;}
+.cls-3{fill:#ff5805;}
+.cls-4{fill:#f5afcb;}
+.cls-5{fill:#ff9b00;}
+
+.circleList li {
+  position: relative; 
+  padding-left: 1.5rem; 
+}
+
+.circleList li::before {
+  content: ''; 
+  position: absolute;
+  top: 0.5rem; 
+  left: 0; 
+  width: 1rem;
+  height: 0.5rem;
+  background-color: #6672C7; 
+  border-radius: 9999px; 
+}
+
+@keyframes earthy {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+@layer utilities {
+  .animateEarthy {
+    animation: earthy 15s linear infinite;
+  }
+}
+
+
+
+
+@keyframes moveBeams {
+  0% {
+    stroke-dashoffset: 3000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.beam-effect {
+  animation: moveBeams 1s linear infinite; /* Animates the stroke */
+  
+  stroke-dasharray: 3000;
+  stroke-width: 1;
+  stroke-dashoffset: 3000;
+}
